@@ -15,8 +15,7 @@
     "js",
     "localStorage",
     "sessionStorage",
-    "in-memory",
-    "upstash"
+    "in-memory"
   ],
   "repository": {
     "url": "git+https://github.com/jsheaven/simply-persist-sync.git",
@@ -44,8 +43,7 @@
     "dist"
   ],
   "dependencies": {
-    "runtime-info": "^1.0.1",
-    "@upstash/redis": "^1.19.3"
+    "runtime-info": "^1.0.1"
   },
   "devDependencies": {
     "@jsheaven/easybuild": "1.2.9",
