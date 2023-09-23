@@ -21,8 +21,8 @@ possible isomorphic on client and server side, no matter what.
 - ✅ Supports `sessionStorage`
 - ✅ Supports in-memory as an automatic fallback
 - ✅ Exposes the backend API reference of each storage provider for low-level API access
-- ✅ Just `592 byte` nano sized (ESM, gizpped)
-- ✅ Tree-shakable, side-effect free, so maybe just `~200 byte` for you
+- ✅ Just `0.455 kB` nano sized (ESM, gizpped)
+- ✅ Tree-shakable, side-effect free, so maybe just `~150 byte` for you
 - ✅ First class TypeScript support
 - ✅ 100% Unit Test coverage
 
