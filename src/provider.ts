@@ -1,20 +1,27 @@
 import type { MemoryProviderOptions } from './isomporphic/memory'
-import type { UpstashProviderOptions } from './isomporphic/upstash'
 
-export type MiddlewareFn<T> = (key: string, value: T) => Promise<T>
+export type MiddlewareFn<T> = (key: string, value: T) => T
 
 /** a simple key/value persistence interface */
 export interface PersistenceProviderImpl<T> {
-  get: (key: string, defaultValue: T, middlewareFn?: MiddlewareFn<T>) => Promise<T>
-  set: (key: string, value: T, middlewareFn?: MiddlewareFn<T>) => Promise<void>
-  del: (key: string) => Promise<void>
-  clear: () => Promise<void>
+  get: (key: string, defaultValue: T, middlewareFn?: MiddlewareFn<T>) => T
+  set: (key: string, value: T, middlewareFn?: MiddlewareFn<T>) => void
+  del: (key: string) => void
+  clear: () => void
+  backendApi: any
+}
+
+/** a simple, synchronous key/value persistence interface */
+export interface PersistenceProviderImplSync<T> {
+  get: (key: string, defaultValue: T, middlewareFn?: MiddlewareFn<T>) => T
+  set: (key: string, value: T, middlewareFn?: MiddlewareFn<T>) => void
+  del: (key: string) => void
+  clear: () => void
   backendApi: any
 }
 
 export type PersistenceProvider = 'upstash' | 'session' | 'local' | 'memory'
 
-export type PersistenceProviderOptions = UpstashProviderOptions | MemoryProviderOptions
+export type PersistenceProviderOptions = MemoryProviderOptions
 
 export { MemoryStorage, WebStorage } from './isomporphic/memory'
-export { UpstashStorage } from './isomporphic/upstash'

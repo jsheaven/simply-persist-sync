@@ -1,12 +1,12 @@
 {
-  "name": "simply-persist",
+  "name": "simply-persist-sync",
   "type": "module",
   "version": "1.1.2",
   "publishConfig": {
     "access": "public"
   },
   "license": "MIT",
-  "description": "Isomorphic object key/value persistence layer (browser, server) with in-memory, browser and fast, free-tier serverless backend providers",
+  "description": "Isomorphic, synchronous object key/value persistence layer (browser, server) with in-memory, browser and fast, free-tier serverless backend providers",
   "keywords": [
     "server-side",
     "client-side",
@@ -19,7 +19,7 @@
     "upstash"
   ],
   "repository": {
-    "url": "git+https://github.com/kyr0/runtime-info.git",
+    "url": "git+https://github.com/jsheaven/simply-persist-sync.git",
     "type": "git"
   },
   "scripts": {
