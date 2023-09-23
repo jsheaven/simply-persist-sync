@@ -1,4 +1,4 @@
-<h1 align="center">simply-persist</h1>
+<h1 align="center">simply-persist-sync</h1>
 
 > Nano utility library for JavaScript to persist objects (POJOs) everywhere and with ease
 
@@ -20,7 +20,6 @@ possible isomorphic on client and server side, no matter what.
 - ✅ Supports `localStorage`
 - ✅ Supports `sessionStorage`
 - ✅ Supports in-memory as an automatic fallback
-- ✅ Supports [Upstash](https://www.upstash.com) (serverless, free-tier database backend)
 - ✅ Exposes the backend API reference of each storage provider for low-level API access
 - ✅ Just `592 byte` nano sized (ESM, gizpped)
 - ✅ Tree-shakable, side-effect free, so maybe just `~200 byte` for you
@@ -29,35 +28,35 @@ possible isomorphic on client and server side, no matter what.
 
 <h2 align="center">Install</h2>
 
-- yarn: `yarn add simply-persist`
-- npm: `npm install simply-persist`
+- yarn: `yarn add simply-persist-sync`
+- npm: `npm install simply-persist-sync`
 
 <h2 align="center">Use</h2>
 
 <h3 align="center">ESM</h2>
 
 ```ts
-import { getStorage } from 'simply-persist'
+import { getStorage } from 'simply-persist-sync'
 
 const storage = getStorage('memory') // also: 'local' | 'session' | 'upstash'
 
 // store a value
-await storage.set('abc', 123)
+storage.set('abc', 123)
 
 // read a previously stored value, if not existing, return the default (0)
-const valueStored = await storage.get('abc', 0)
+const valueStored = storage.get('abc', 0)
 
 // delete a single value
-await storage.del('abc')
+storage.del('abc')
 
 // delete all values
-await storage.clear()
+storage.clear()
 ```
 
 <h3 align="center">CommonJS</h2>
 
 ```ts
-const { getStorage } = require('simply-persist')
+const { getStorage } = require('simply-persist-sync')
 
 // same API like ESM variant
 ```
